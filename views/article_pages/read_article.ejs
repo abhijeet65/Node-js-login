@@ -1,0 +1,22 @@
+<div class="container">
+    <br>
+    <!-- NOTE : The article id is passsed to the route -->
+    <%  if ( user.id === article.author  ) {  %>
+    <a href="/article/edit/<%= article._id %>" class="stylish_yello_link">Edit</a>
+    <span style="padding-right: 20px;"></span>
+    <a href="#" class="delete-article stylish_red_link" data-id="<%= article._id %>">Delete</a>
+    <% } %>
+
+    <br><br>
+    <span style="font-weight: bold; font-size: 45px; margin-right: 20px;">
+        <%= article.title %>
+    </span>
+    <%= article.name_of_writer %> &nbsp;
+    [[
+    <%= article.author %> ]]
+    <br><br>
+    <p>
+        <%= article.body %>
+    </p>
+
+</div>

@@ -1,0 +1,70 @@
+<% if(user) { %>
+
+<style>
+    @media (min-width: 560px) {
+        .card-columns {
+            column-count: 1;
+        }
+    }
+
+    @media (min-width: 768px) {
+        .card-columns {
+            column-count: 2;
+        }
+    }
+
+    @media (min-width: 992px) {
+        .card-columns {
+            column-count: 3;
+        }
+    }
+
+    .card {
+        background-color: rgb(240, 235, 230);
+    }
+</style>
+
+
+<div class="container">
+
+    <h1>Articles</h1>
+    <br>
+
+    <div class="card-columns">
+        <% all_articles.forEach((article) => { %>
+
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title" style="font-weight: bold; font-size: 28px">
+                    <%= article.title %>
+                </h5>
+                <h6 class="card-subtitle mb-2 text-muted" style="font-style: italic">
+                    <%= // article.author %>
+                    <%= article.name_of_writer %>
+                </h6>
+                <p class="card-text">
+                    <%= article.body.substring(1,80)%> ...
+                </p>
+                <a href="article/<%= article._id %>" class="card-link yello_link">Read</a>
+
+                <% if ( user.id === article.author  ) {  %>
+                <a href="/article/edit/<%=article._id %>" class="card-link yello_link">Edit</a>
+                <a href="#" class="card-link delete-article red_link" data-id="<%= article._id %>" style="padding-left: 70px;">
+                    Delete</a>
+                <% } %>
+
+            </div>
+        </div>
+
+        <% }); %>
+    </div>
+
+</div>
+
+<% } else {  %>
+
+<script>
+    window.location = "/users/login";
+</script>
+
+<% }  %>

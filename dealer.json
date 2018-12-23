@@ -1,0 +1,676 @@
+[{
+    "id": "DealerID",
+    "name": "DealerName",
+    "longitude": "DealerLongitude",
+    "latitude": "DealerLatitude",
+    "email": "DealerEmail",
+    "rating": "DealerAvgRatingOutOf5",
+    "numOfPEopleRated": "NumberOfPeopleRated"
+  },
+  {
+    "id": "103",
+    "name": "Hardin Buick GMC",
+    "longitude": "83.3702517",
+    "latitude": "25.9814011",
+    "email": "bitbattle2018@mykaarma.com",
+    "rating": "4.05",
+    "numOfPEopleRated": "732"
+  },
+  {
+    "id": "170",
+    "name": "Mark Miller Subaru Midtown",
+    "longitude": "83.4624978",
+    "latitude": "25.4314087",
+    "email": "bitbattle2018@mykaarma.com",
+    "rating": "2.69",
+    "numOfPEopleRated": "496"
+  },
+  {
+    "id": "169",
+    "name": "Mark Miller Subaru South Towne",
+    "longitude": "83.2668224",
+    "latitude": "26.05406",
+    "email": "bitbattle2018@mykaarma.com",
+    "rating": "4.77",
+    "numOfPEopleRated": "558"
+  },
+  {
+    "id": "178",
+    "name": "Roush Honda",
+    "longitude": "82.8952379",
+    "latitude": "26.1244779",
+    "email": "bitbattle2018@mykaarma.com",
+    "rating": "3.62",
+    "numOfPEopleRated": "128"
+  },
+  {
+    "id": "226",
+    "name": "Mercedes-Benz of Gainesville",
+    "longitude": "82.4545806",
+    "latitude": "25.4685204",
+    "email": "bitbattle2018@mykaarma.com",
+    "rating": "3.54",
+    "numOfPEopleRated": "793"
+  },
+  {
+    "id": "271",
+    "name": "Winner Ford of Cherry Hill",
+    "longitude": "82.7846396",
+    "latitude": "25.4663094",
+    "email": "bitbattle2018@mykaarma.com",
+    "rating": "2.68",
+    "numOfPEopleRated": "765"
+  },
+  {
+    "id": "278",
+    "name": "Mercedes-Benz of St Clair Shores",
+    "longitude": "83.7710818",
+    "latitude": "25.2703759",
+    "email": "bitbattle2018@mykaarma.com",
+    "rating": "3.77",
+    "numOfPEopleRated": "238"
+  },
+  {
+    "id": "304",
+    "name": "Napleton`s Autowerks Schererville",
+    "longitude": "82.1692242",
+    "latitude": "25.2968101",
+    "email": "bitbattle2018@mykaarma.com",
+    "rating": "4.69",
+    "numOfPEopleRated": "859"
+  },
+  {
+    "id": "302",
+    "name": "Napleton Autowerks of Bourbonnais",
+    "longitude": "82.4601906",
+    "latitude": "24.8011812",
+    "email": "bitbattle2018@mykaarma.com",
+    "rating": "2.84",
+    "numOfPEopleRated": "370"
+  },
+  {
+    "id": "305",
+    "name": "Napleton Auto Group",
+    "longitude": "83.1944782",
+    "latitude": "24.5979521",
+    "email": "bitbattle2018@mykaarma.com",
+    "rating": "4.94",
+    "numOfPEopleRated": "385"
+  },
+  {
+    "id": "301",
+    "name": "Mercedes-Benz of Columbus",
+    "longitude": "82.5159364",
+    "latitude": "25.3206206",
+    "email": "bitbattle2018@mykaarma.com",
+    "rating": "4.83",
+    "numOfPEopleRated": "597"
+  },
+  {
+    "id": "367",
+    "name": "Mercedes-Benz of Portsmouth",
+    "longitude": "83.6749736",
+    "latitude": "25.5009841",
+    "email": "bitbattle2018@mykaarma.com",
+    "rating": "4.36",
+    "numOfPEopleRated": "507"
+  },
+  {
+    "id": "368",
+    "name": "Holloway Motor Cars Manchester",
+    "longitude": "83.387443",
+    "latitude": "25.9011181",
+    "email": "bitbattle2018@mykaarma.com",
+    "rating": "4.08",
+    "numOfPEopleRated": "360"
+  },
+  {
+    "id": "355",
+    "name": "Mercedes-Benz of Shrewsbury",
+    "longitude": "82.4662069",
+    "latitude": "24.9525747",
+    "email": "bitbattle2018@mykaarma.com",
+    "rating": "4.24",
+    "numOfPEopleRated": "391"
+  },
+  {
+    "id": "412",
+    "name": "Mercedes-Benz of Laredo",
+    "longitude": "82.3705267",
+    "latitude": "25.4732146",
+    "email": "bitbattle2018@mykaarma.com",
+    "rating": "3.58",
+    "numOfPEopleRated": "701"
+  },
+  {
+    "id": "413",
+    "name": "Coppus Motors",
+    "longitude": "82.5301458",
+    "latitude": "25.1929428",
+    "email": "bitbattle2018@mykaarma.com",
+    "rating": "2.99",
+    "numOfPEopleRated": "615"
+  },
+  {
+    "id": "435",
+    "name": "Mercedes-Benz of Tucson",
+    "longitude": "83.0764233",
+    "latitude": "25.2307168",
+    "email": "bitbattle2018@mykaarma.com",
+    "rating": "2.2",
+    "numOfPEopleRated": "875"
+  },
+  {
+    "id": "443",
+    "name": "Pueblo Dodge Chrysler Jeep",
+    "longitude": "82.5642552",
+    "latitude": "25.4629128",
+    "email": "bitbattle2018@mykaarma.com",
+    "rating": "3.59",
+    "numOfPEopleRated": "409"
+  },
+  {
+    "id": "466",
+    "name": "John Hine Mazda",
+    "longitude": "83.0991825",
+    "latitude": "25.2628655",
+    "email": "bitbattle2018@mykaarma.com",
+    "rating": "3.84",
+    "numOfPEopleRated": "968"
+  },
+  {
+    "id": "172",
+    "name": "South Bay Lexus of Torrance",
+    "longitude": "82.0735005",
+    "latitude": "25.223891",
+    "email": "bitbattle2018@mykaarma.com",
+    "rating": "4.14",
+    "numOfPEopleRated": "703"
+  },
+  {
+    "id": "256",
+    "name": "Alderson European Motorcars - Midland",
+    "longitude": "82.791173",
+    "latitude": "25.6680222",
+    "email": "bitbattle2018@mykaarma.com",
+    "rating": "4.9",
+    "numOfPEopleRated": "848"
+  },
+  {
+    "id": "257",
+    "name": "Alderson European Motorcars - Lubbock",
+    "longitude": "83.7018089",
+    "latitude": "24.7204544",
+    "email": "bitbattle2018@mykaarma.com",
+    "rating": "3.88",
+    "numOfPEopleRated": "862"
+  },
+  {
+    "id": "547",
+    "name": "Alderson BMW",
+    "longitude": "83.0741248",
+    "latitude": "24.711321",
+    "email": "bitbattle2018@mykaarma.com",
+    "rating": "3.92",
+    "numOfPEopleRated": "907"
+  },
+  {
+    "id": "546",
+    "name": "Alderson Lexus",
+    "longitude": "82.956451",
+    "latitude": "24.45416",
+    "email": "bitbattle2018@mykaarma.com",
+    "rating": "2.64",
+    "numOfPEopleRated": "147"
+  },
+  {
+    "id": "374",
+    "name": "Mercedes-Benz of Arrowhead",
+    "longitude": "82.1864554",
+    "latitude": "25.4115449",
+    "email": "bitbattle2018@mykaarma.com",
+    "rating": "4.3",
+    "numOfPEopleRated": "182"
+  },
+  {
+    "id": "437",
+    "name": "Mercedes-Benz of Scottsdale",
+    "longitude": "83.2060046",
+    "latitude": "24.7523527",
+    "email": "bitbattle2018@mykaarma.com",
+    "rating": "4.04",
+    "numOfPEopleRated": "627"
+  },
+  {
+    "id": "215",
+    "name": "Green Lincoln Mazda",
+    "longitude": "82.8048829",
+    "latitude": "25.1659687",
+    "email": "bitbattle2018@mykaarma.com",
+    "rating": "4.68",
+    "numOfPEopleRated": "234"
+  },
+  {
+    "id": "218",
+    "name": "Green Hyundai",
+    "longitude": "82.2260955",
+    "latitude": "25.1823495",
+    "email": "bitbattle2018@mykaarma.com",
+    "rating": "4.49",
+    "numOfPEopleRated": "177"
+  },
+  {
+    "id": "548",
+    "name": "Alderson Cadillac",
+    "longitude": "83.6797912",
+    "latitude": "25.517423",
+    "email": "bitbattle2018@mykaarma.com",
+    "rating": "4.65",
+    "numOfPEopleRated": "391"
+  },
+  {
+    "id": "216",
+    "name": "Green Toyota Scion Volkswagen Audi",
+    "longitude": "83.1809397",
+    "latitude": "25.6970035",
+    "email": "bitbattle2018@mykaarma.com",
+    "rating": "2.53",
+    "numOfPEopleRated": "686"
+  },
+  {
+    "id": "583",
+    "name": "Ted Russell Ford/ Lincoln/ Isuzu Parkside",
+    "longitude": "82.515397",
+    "latitude": "25.1131863",
+    "email": "bitbattle2018@mykaarma.com",
+    "rating": "2.29",
+    "numOfPEopleRated": "614"
+  },
+  {
+    "id": "582",
+    "name": "Ted Russell Ford / Lincoln Kingston Pike",
+    "longitude": "83.0121178",
+    "latitude": "24.4855361",
+    "email": "bitbattle2018@mykaarma.com",
+    "rating": "4.56",
+    "numOfPEopleRated": "704"
+  },
+  {
+    "id": "217",
+    "name": "Green Nissan",
+    "longitude": "82.7352023",
+    "latitude": "25.2147352",
+    "email": "bitbattle2018@mykaarma.com",
+    "rating": "4.62",
+    "numOfPEopleRated": "827"
+  },
+  {
+    "id": "219",
+    "name": "Green Dodge Kia Subaru",
+    "longitude": "82.1019564",
+    "latitude": "25.0299118",
+    "email": "bitbattle2018@mykaarma.com",
+    "rating": "3.6",
+    "numOfPEopleRated": "104"
+  },
+  {
+    "id": "628",
+    "name": "Route 18 Chrysler Jeep Dodge Ram",
+    "longitude": "82.7192475",
+    "latitude": "25.013869",
+    "email": "bitbattle2018@mykaarma.com",
+    "rating": "3.04",
+    "numOfPEopleRated": "539"
+  },
+  {
+    "id": "604",
+    "name": "BMW of Watertown",
+    "longitude": "82.9904781",
+    "latitude": "25.5947272",
+    "email": "bitbattle2018@mykaarma.com",
+    "rating": "4.78",
+    "numOfPEopleRated": "856"
+  },
+  {
+    "id": "93",
+    "name": "Hoffman Audi Hartford",
+    "longitude": "82.723967",
+    "latitude": "24.8559808",
+    "email": "bitbattle2018@mykaarma.com",
+    "rating": "2.16",
+    "numOfPEopleRated": "701"
+  },
+  {
+    "id": "42",
+    "name": "Hoffman Lexus",
+    "longitude": "82.7282226",
+    "latitude": "26.0476649",
+    "email": "bitbattle2018@mykaarma.com",
+    "rating": "3.79",
+    "numOfPEopleRated": "832"
+  },
+  {
+    "id": "59",
+    "name": "Hoffman Porsche",
+    "longitude": "83.2146587",
+    "latitude": "24.6597181",
+    "email": "bitbattle2018@mykaarma.com",
+    "rating": "2.59",
+    "numOfPEopleRated": "290"
+  },
+  {
+    "id": "518",
+    "name": "DealerTrack TEST",
+    "longitude": "83.5735122",
+    "latitude": "25.5864284",
+    "email": "bitbattle2018@mykaarma.com",
+    "rating": "2.43",
+    "numOfPEopleRated": "810"
+  },
+  {
+    "id": "652",
+    "name": "MBUSA Engineering Center",
+    "longitude": "83.1155135",
+    "latitude": "24.4065577",
+    "email": "bitbattle2018@mykaarma.com",
+    "rating": "2.85",
+    "numOfPEopleRated": "928"
+  },
+  {
+    "id": "675",
+    "name": "Dodge Country",
+    "longitude": "82.8667608",
+    "latitude": "25.2902902",
+    "email": "bitbattle2018@mykaarma.com",
+    "rating": "4.11",
+    "numOfPEopleRated": "918"
+  },
+  {
+    "id": "674",
+    "name": "Freedom Jeep Chrysler",
+    "longitude": "83.0275023",
+    "latitude": "25.9032362",
+    "email": "bitbattle2018@mykaarma.com",
+    "rating": "3.13",
+    "numOfPEopleRated": "220"
+  },
+  {
+    "id": "573",
+    "name": "P \u0026 W BMW MINI",
+    "longitude": "83.3853284",
+    "latitude": "25.7226684",
+    "email": "bitbattle2018@mykaarma.com",
+    "rating": "2.5",
+    "numOfPEopleRated": "936"
+  },
+  {
+    "id": "386",
+    "name": "Mercedes-Benz of Rochester - MN",
+    "longitude": "83.3064823",
+    "latitude": "26.0882787",
+    "email": "bitbattle2018@mykaarma.com",
+    "rating": "4.3",
+    "numOfPEopleRated": "630"
+  },
+  {
+    "id": "688",
+    "name": "Yochum CDJR",
+    "longitude": "82.8429041",
+    "latitude": "25.9763523",
+    "email": "bitbattle2018@mykaarma.com",
+    "rating": "2.14",
+    "numOfPEopleRated": "228"
+  },
+  {
+    "id": "690",
+    "name": "Ted Russell Nissan",
+    "longitude": "82.9366328",
+    "latitude": "25.9206642",
+    "email": "bitbattle2018@mykaarma.com",
+    "rating": "4.38",
+    "numOfPEopleRated": "987"
+  },
+  {
+    "id": "691",
+    "name": "Pueblo Toyota",
+    "longitude": "83.2662005",
+    "latitude": "25.1247489",
+    "email": "bitbattle2018@mykaarma.com",
+    "rating": "2.5",
+    "numOfPEopleRated": "551"
+  },
+  {
+    "id": "698",
+    "name": "Mercedes-Benz of St. George",
+    "longitude": "82.2401251",
+    "latitude": "25.4096229",
+    "email": "bitbattle2018@mykaarma.com",
+    "rating": "2.35",
+    "numOfPEopleRated": "593"
+  },
+  {
+    "id": "709",
+    "name": "Acura Columbus",
+    "longitude": "83.1904744",
+    "latitude": "25.3619848",
+    "email": "bitbattle2018@mykaarma.com",
+    "rating": "2.24",
+    "numOfPEopleRated": "314"
+  },
+  {
+    "id": "729",
+    "name": "Audi Annapolis",
+    "longitude": "83.1165824",
+    "latitude": "24.4765354",
+    "email": "bitbattle2018@mykaarma.com",
+    "rating": "2.04",
+    "numOfPEopleRated": "113"
+  },
+  {
+    "id": "724",
+    "name": "Klein Honda",
+    "longitude": "82.9059293",
+    "latitude": "26.1193079",
+    "email": "bitbattle2018@mykaarma.com",
+    "rating": "2.15",
+    "numOfPEopleRated": "591"
+  },
+  {
+    "id": "739",
+    "name": "Critz BMW ",
+    "longitude": "83.4932014",
+    "latitude": "25.6312483",
+    "email": "bitbattle2018@mykaarma.com",
+    "rating": "3.85",
+    "numOfPEopleRated": "482"
+  },
+  {
+    "id": "738",
+    "name": "Critz Auto Group ",
+    "longitude": "82.8113496",
+    "latitude": "25.5542059",
+    "email": "bitbattle2018@mykaarma.com",
+    "rating": "4.62",
+    "numOfPEopleRated": "233"
+  },
+  {
+    "id": "730",
+    "name": "Audi Lubbock",
+    "longitude": "83.3767003",
+    "latitude": "25.2055022",
+    "email": "bitbattle2018@mykaarma.com",
+    "rating": "4.75",
+    "numOfPEopleRated": "495"
+  },
+  {
+    "id": "784",
+    "name": "Hoffman Toyota",
+    "longitude": "82.6749749",
+    "latitude": "25.6492995",
+    "email": "bitbattle2018@mykaarma.com",
+    "rating": "2.72",
+    "numOfPEopleRated": "540"
+  },
+  {
+    "id": "783",
+    "name": "Hoffman Nissan",
+    "longitude": "83.5176773",
+    "latitude": "24.6155099",
+    "email": "bitbattle2018@mykaarma.com",
+    "rating": "4.54",
+    "numOfPEopleRated": "614"
+  },
+  {
+    "id": "785",
+    "name": "Hoffman Honda",
+    "longitude": "83.2080559",
+    "latitude": "25.095218",
+    "email": "bitbattle2018@mykaarma.com",
+    "rating": "4.97",
+    "numOfPEopleRated": "757"
+  },
+  {
+    "id": "772",
+    "name": "Jaguar Land Rover Solon",
+    "longitude": "83.7723293",
+    "latitude": "25.5155374",
+    "email": "bitbattle2018@mykaarma.com",
+    "rating": "3.33",
+    "numOfPEopleRated": "209"
+  },
+  {
+    "id": "771",
+    "name": "BMW Cleveland",
+    "longitude": "83.6101295",
+    "latitude": "25.0756191",
+    "email": "bitbattle2018@mykaarma.com",
+    "rating": "3.37",
+    "numOfPEopleRated": "711"
+  },
+  {
+    "id": "794",
+    "name": "Grayson Hyundai/Subaru",
+    "longitude": "83.6467911",
+    "latitude": "24.846425",
+    "email": "bitbattle2018@mykaarma.com",
+    "rating": "2.49",
+    "numOfPEopleRated": "756"
+  },
+  {
+    "id": "793",
+    "name": "Grayson BMW",
+    "longitude": "83.3994523",
+    "latitude": "25.0667408",
+    "email": "bitbattle2018@mykaarma.com",
+    "rating": "3.68",
+    "numOfPEopleRated": "265"
+  },
+  {
+    "id": "803",
+    "name": "Hoffman Ford Lincoln",
+    "longitude": "82.2288733",
+    "latitude": "24.6964492",
+    "email": "bitbattle2018@mykaarma.com",
+    "rating": "3.43",
+    "numOfPEopleRated": "184"
+  },
+  {
+    "id": "323",
+    "name": "Mercedes-Benz of Fayetteville",
+    "longitude": "83.0578827",
+    "latitude": "24.7551347",
+    "email": "bitbattle2018@mykaarma.com",
+    "rating": "2.61",
+    "numOfPEopleRated": "149"
+  },
+  {
+    "id": "54",
+    "name": "myKaarma Dealership",
+    "longitude": "83.2276862",
+    "latitude": "25.9266278",
+    "email": "bitbattle2018@mykaarma.com",
+    "rating": "4.59",
+    "numOfPEopleRated": "217"
+  },
+  {
+    "id": "849",
+    "name": "Subaru of Bend",
+    "longitude": "83.0219136",
+    "latitude": "26.0654587",
+    "email": "bitbattle2018@mykaarma.com",
+    "rating": "3.65",
+    "numOfPEopleRated": "355"
+  },
+  {
+    "id": "890",
+    "name": "Flag Chevrolet",
+    "longitude": "83.0850702",
+    "latitude": "25.7439967",
+    "email": "bitbattle2018@mykaarma.com",
+    "rating": "4.89",
+    "numOfPEopleRated": "836"
+  },
+  {
+    "id": "891",
+    "name": "Cadillac of Naperville",
+    "longitude": "82.3779998",
+    "latitude": "24.764102",
+    "email": "bitbattle2018@mykaarma.com",
+    "rating": "4.55",
+    "numOfPEopleRated": "718"
+  },
+  {
+    "id": "896",
+    "name": "Honda Lancaster",
+    "longitude": "82.9991802",
+    "latitude": "24.4491787",
+    "email": "bitbattle2018@mykaarma.com",
+    "rating": "2.07",
+    "numOfPEopleRated": "985"
+  },
+  {
+    "id": "883",
+    "name": "Winslow BMW of Colorado Springs",
+    "longitude": "83.4187068",
+    "latitude": "25.3170243",
+    "email": "bitbattle2018@mykaarma.com",
+    "rating": "4.97",
+    "numOfPEopleRated": "220"
+  },
+  {
+    "id": "984",
+    "name": "Audi Nashua",
+    "longitude": "83.2812854",
+    "latitude": "25.8283026",
+    "email": "bitbattle2018@mykaarma.com",
+    "rating": "4.87",
+    "numOfPEopleRated": "997"
+  },
+  {
+    "id": "983",
+    "name": "Porsche Nashua",
+    "longitude": "82.1224796",
+    "latitude": "25.3151426",
+    "email": "bitbattle2018@mykaarma.com",
+    "rating": "4.41",
+    "numOfPEopleRated": "379"
+  },
+  {
+    "id": "1029",
+    "name": "CJDR of Tuscaloosa",
+    "longitude": "82.4625727",
+    "latitude": "25.8419196",
+    "email": "bitbattle2018@mykaarma.com",
+    "rating": "2.1",
+    "numOfPEopleRated": "143"
+  },
+  {
+    "id": "960",
+    "name": "Heritage Cadillac",
+    "longitude": "83.279509",
+    "latitude": "25.8296624",
+    "email": "bitbattle2018@mykaarma.com",
+    "rating": "2.73",
+    "numOfPEopleRated": "867"
+  }
+]

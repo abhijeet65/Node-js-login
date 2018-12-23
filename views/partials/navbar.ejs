@@ -1,0 +1,81 @@
+<!-- A grey horizontal navbar that becomes vertical on small screens -->
+<nav class="navbar navbar-expand-md bg-dark fixed-top navbar-dark">
+
+    <a href=""></a> <!-- JUST KEEP ITS for adjustment -->
+    <a class="navbar-brand " href="/" style="position: fixed;  height: 80px; width: 60px;">
+        <img src="/images/bitcoin_logo.png" alt="Logo" style="width:90px; margin-top: 0px; border: 0px solid red; position: fixed">
+    </a>
+
+    <!-- <a class="navbar-brand .d-md-none .d-lg-block " href="/" >
+        <img src="/images/bitcoin_logo.png" alt="Logo" style="width:30px;">
+    </a> -->
+
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Links -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent" >
+
+        <% if ( user !== null ) {  %>
+        <!-- ie if user is logged in  -->
+        <ul class="navbar-nav mr-auto">
+
+            <li class="nav-item" style=" margin-left: 90px;">
+                <a class="nav-link" href="/">Home</a>
+            </li>
+
+            <li class="nav-item" style=" margin-left: 90px;">
+                <a class="nav-link" href="/article/add">Add Article</a>
+            </li>
+
+            <li class="nav-item" style=" margin-left: 90px;">
+                <a class="nav-link" href="#">Link 3</a>
+            </li>
+
+        </ul>
+
+        <% } %>
+
+
+        <ul class="navbar-nav ml-auto">
+
+            <% if ( user == null ) {  %>
+            <!-- ie if user is NOT logged  -->
+            <li class="nav-item" style=" margin-left: 90px;">
+                <a class="nav-link" href="/users/signup">
+                    <span class="" style="border-bottom: 1px dotted #ddd6c9; padding-bottom: 7px;">
+                        Sign Up
+                    </span>
+                </a>
+            </li>
+
+            <li class="nav-item" style=" margin-left: 90px; margin-right: 10px;">
+
+                <a class="nav-link" href="/users/login">
+                    <span class="" style="border-bottom: 1px dotted #ddd6c9; padding-bottom: 7px;">
+                        Login
+                    </span>
+                </a>
+            </li>
+
+            <% } else { %>
+
+            <li class="nav-item" style=" margin-left: 90px; margin-right: 10px;">
+
+                <a class="nav-link" href="/users/logout">
+                    <span class="" style="border-bottom: 1px dotted #ddd6c9; padding-bottom: 7px;">
+                        Log-out
+                    </span>
+                </a>
+            </li>
+
+            <% } %>
+
+        </ul>
+    </div>
+
+
+</nav>

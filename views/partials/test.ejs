@@ -1,0 +1,43 @@
+<div id="messages">
+    <% Object.keys(messages).forEach(function (type) { %>
+    <ul class="<%= type %>">
+        <% messages[type].forEach(function (message) { %>
+        <li>
+            <%= message %>
+        </li>
+        <% }) %>
+    </ul>
+    <% }) %>
+</div>
+
+
+<div id="messages">
+
+    <% Object.keys(messages).forEach(  (type) =>  { %>
+
+    <ul class="alert alert-<%= type %> ">
+
+        <% messages[type].forEach( (message) => { %>
+        <li>
+            <strong>
+                <%= type%>! </strong>
+            <%= message %>
+        </li>
+
+        <% }) %>
+    </ul>
+
+    <% }) %>
+</div>
+
+<!--
+<ul class="alert alert-<%= type %> alert-dismissible fade show">
+    <li>
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <strong>
+            <%= type%>!
+        </strong>
+        <%= message %>
+    </li>
+
+</ul> -->

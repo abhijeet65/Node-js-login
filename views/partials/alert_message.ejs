@@ -1,0 +1,20 @@
+<div id="messages">
+
+    <% Object.keys(messages).forEach( function (type)  { %>
+
+    <ul class="alert alert-<%= type %> alert-dismissible    fade show">
+
+        <% messages[type].forEach( function (message) { %>
+        <li>
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            <strong>
+                <%= type%>!
+            </strong>
+            <%= message %>
+        </li>
+
+        <% }) %>
+    </ul>
+
+    <% }) %>
+</div>

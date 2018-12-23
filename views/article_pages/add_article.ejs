@@ -1,0 +1,60 @@
+<span style="padding:1px;"></span>
+
+<div class="container" style="background-color: rgb(180, 184, 184);">
+
+	<!-- Default form contact -->
+	<form class="text-center border border-light p-5" method="POST" action="/article/add">
+		<h1>ADD&nbsp; ARTICLE</h1>
+
+		<br>
+		<input type="text" id="article_title" name="article_title" class="form-control mb-4" placeholder="Title">
+
+		<!-- <input type="text" id="article_author_name" name="article_author_name" class="form-control mb-4" placeholder="Author Name"> -->
+
+		<div class="form-group">
+			<textarea class="form-control rounded-2" id="article_body" name="article_body" rows="12" placeholder="Article Content"></textarea>
+		</div>
+
+		<br>
+		<!-- Send button -->
+		<button class="btn btn-dark btn-block" type="submit">Submit</button>
+
+	</form>
+	<!-- Default form contact -->
+</div>
+
+
+
+
+
+
+<!-- Button to Open the Modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+	Open modal
+</button>
+
+
+<!-- The Modal -->
+<div class="modal" id="myModal">
+	<div class="modal-dialog">
+		<div class="modal-content">
+
+			<!-- Modal Header -->
+			<div class="modal-header">
+				<h4 class="modal-title">Modal Heading</h4>
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+			</div>
+
+			<!-- Modal body -->
+			<div class="modal-body">
+				Modal body..
+			</div>
+
+			<!-- Modal footer -->
+			<div class="modal-footer">
+				<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+			</div>
+
+		</div>
+	</div>
+</div>

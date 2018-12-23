@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- ----------------------------  BOOTSTRAP files  --------------------------- -->
+    <script src="/jquery.min.js"></script> <!-- add this befor bootstrap -- IMPORTANT -->
+    <link rel="stylesheet" href="/bootstrap-4.1.1/css/bootstrap.min.css">
+    <script src="/bootstrap-4.1.1/js/bootstrap.min.js"></script>
+
+    <!-- ----------------------------  CUSTOM CSS  --------------------------- -->
+    <link rel="stylesheet" href="/css/custom.css">
+
+    <title>
+        <%= page_title %>
+    </title>
+</head>
+
+
+
+<body>
+    <% if(errors !== "404") { %>
+
+    <!-- <%// include partials/header %> -->
+    <% include partials/navbar %>
+
+    <div class="container" id="messages-box">
+        <%- messages('partials/alert_message', locals) %>
+    </div>
+
+    <% if(errors !== undefined) { %>
+    <% include partials/page_errors %>
+    <% } %>
+
+    <% } %>
+
+    <%- include(render_page) %>
+
+
+    <!-- <%//  if(page_title !== "Landing Page")  {  %>
+    <%//   include partials/footer %>
+    <%//   } %> -->
+
+</body>
+
+<!-- ----------------------------  CUSTOM JS  --------------------------- -->
+<script src="/js/custom.js"></script>
+
+</html>

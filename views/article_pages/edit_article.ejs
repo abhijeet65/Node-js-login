@@ -1,0 +1,25 @@
+<span style="padding:1px;"></span>
+
+<div class="container" style="background-color: rgb(180, 184, 184);">
+
+    <!-- Default form contact -->
+    <form class="text-center border border-light p-5" method="POST" action="/article/update">
+        <h1>EDIT&nbsp; ARTICLE</h1>
+
+        <input type="text" hidden name="article_id" value="<%=article._id%>">
+        <br>
+        <input type="text" id="" name="article_title" class="form-control mb-4" value="<%=article.title%>">
+
+        <input type="text" id="" name="article_author_name" class="form-control mb-4" value="<%=article.author%>">
+
+        <div class="form-group">
+            <textarea class="form-control rounded-2" id="" name="article_body" rows="12"><%=article.body%></textarea>
+        </div>
+
+        <br>
+        <!-- Send button -->
+        <button class="btn btn-dark btn-block" type="submit">Submit</button>
+
+    </form>
+    <!-- Default form contact -->
+</div>

@@ -1,0 +1,413 @@
+----------------------------------------------------------------------------------------------------------------------------------
+
+.                                           ------- Learn MONGO -------
+
+* DOCUMEENT type database
+* highly scalable & very fast BUT no ACID property --> NOT good for application with high transaction like BANK
+* WHILE inserting a document an "_id" field is automatically created, which is unique in each collection, and used to find document and do other stuff with the document
+    --> as its is automatically generated, we don't need to do make a primary key, and then make is unique, auto-increment all that
+
+
+
+
+--------- Disscussion On _id Field ---------
+MONGO tagline is "for giant ideas," and for good reason.
+The system supports extreme scalability and has been designed to store exceptionally large numbers of documents.
+Among all the data that a MongoDB system handles, however, there's only one field that exists across every document: the _id field.
+
+* The _id field is the unique naming convention that MongoDB uses across all of its content.
+* it's important that you understand its makeup and characteristics, so you can utilize the ways your database
+  is organizing your documents.
+
+
+
+-->>> few of _id's principal characteristics:
+    *   _id is the primary key on elements in a collection; with it, records can be differentiated by default.
+    *   _id is automatically indexed.
+        Lookups specifying { _id: <someval> } refer to the _id index as their guide.
+    *   Architecturally, by default the _id field is an ObjectID, one of MongoDB's BSON (Binary JSON) types.
+        Users can also override _id to something other than an ObjectID, if desired.
+    *   ObjectIds are 12 bytes long,
+        MongoDB's documentation -->
+            * 4-byte value representing the seconds since the  -->> Unix epoch <<--,
+            * 3-byte machine identifier,
+            * 2-byte process id, and
+            * 3-byte counter, starting with a random value."
+
+MongoDB's documentation --> "ObjectIds are small, likely unique, fast to generate, and ordered."
+
+
+
+
+------- Interesting Properties of _id   -------
+
+    * Thanks to the universal, required nature of the _id field,
+    there are several actions available to users that simplify your organization and handling of documents.
+        For Instance,
+            users who stick to the default ObjectID can access the creation of their timestamps -> getTimestamp() command,
+            providing an easy and reliable method for seeing precisely when a document was created.
+
+        Additionally, with a little client-side computation, you can leverage the built-in timestamp
+        to find documents based on insertion time.
+
+    * Similarly, because timestamps are included in the ID’s generation,
+      sorting by _id (or any ObjectID field) will also sort your documents with a rough adherence to when they were created.
+
+    * Finally, keep in mind that the _id field is immutable
+      that is, once a document exists in your MongoDB system, it has been assigned an _id, and you cannot change its primary key.
+
+      That said, _id can be overridden when you insert new documents, but by default it will be populated with an ObjectID.
+
+
+
+
+------- What to Beware When Leveraging _id  -------
+
+Because of these factors and properties of the _id field, there are (at least!)  2 things to be wary of when dealing with it:
+
+    1. Be careful when sharding with the _id index  —>  because ObjectIDs contain timestamps, they are generated in ascending
+       order! Therefore, if you shard a collection by _id, make sure you use hashed sharding.
+        -> Otherwise, all new inserts will go to a single shard.
+        -> This is a problem that MongoDB beginners frequently run into if not warned that this is the default behavior.
+
+    2. Remember that overriding the _id field  -> means you'll need to generate a unique value for your documents.
+        -> While you can use UUIDs or some other value unique to your application,
+        -> it’s best to allow MongoDB to use its default if you aren’t certain your replacement field is unique.
+
+
+
+
+
+----    SHARDING   ----
+Sharding is a type of database partitioning that separates very large databases the into
+smaller, faster, more easily managed parts called data shards. The word shard means a small part of a whole.
+
+
+------ stack overflow explanation : SHARDING------
+Sharding is just another name for "horizontal partitioning" of a database.
+
+From Wikipedia ->>
+    * Horizontal partitioning is a design principle whereby rows of a database table are held separately,
+      rather than splitting by columns (as for normalization).
+    * Each partition forms part of a shard, which may in turn be located on a separate database server or physical location.
+    * The advantage is the number of rows in each table is reduced (this reduces index size, thus improves search performance).
+    * If the sharding is based on some real-world aspect of the data (e.g. European customers vs. American customers) then it may
+      be possible to infer the appropriate shard membership easily and automatically, and query only the relevant shard.
+
+--- Some more information about sharding --->
+    * Firstly, each database server is identical, having the same table structure.
+    * Secondly, the data records are logically split up in a sharded database.
+      Unlike the partitioned database, each complete data record exists in only one shard
+      (unless there's mirroring for backup/redundancy) with all CRUD operations performed just in that database.
+
+
+Sharding is just another name for "horizontal partitioning" of a database. You might want to search for that term to get it clearer.
+
+From Wikipedia:
+
+    Horizontal partitioning is a design principle whereby rows of a database table are held separately, rather than splitting by columns (as for normalization). Each partition forms part of a shard, which may in turn be located on a separate database server or physical location. The advantage is the number of rows in each table is reduced (this reduces index size, thus improves search performance). If the sharding is based on some real-world aspect of the data (e.g. European customers vs. American customers) then it may be possible to infer the appropriate shard membership easily and automatically, and query only the relevant shard.
+
+Some more information about sharding:
+
+    Firstly, each database server is identical, having the same table structure. Secondly, the data records are logically split up in a sharded database. Unlike the partitioned database, each complete data record exists in only one shard (unless there's mirroring for backup/redundancy) with all CRUD operations performed just in that database. You may not like the terminology used, but this does represent a different way of organizing a logical database into smaller parts.
+
+UPDATE: You wont break MVC.
+        * The work of determining the correct shard where to store the data would be transparently done by your data access layer.
+        * There you would have to determine the correct shard based on the criteria which you used to shard your database.
+         (As you have to manually shard the database into some different shards based on some concrete aspects of your application.)
+        * Then you have to take care when loading and storing the data from/into the database to use the correct shard.
+
+
+------  Why sharding  ------
+It's mainly only for very large scale applications, with lots of data.
+* First, it helps minimizing response times for database queries.
+* Second, you can use more cheaper, "lower-end" machines to host your data on, instead of one big server,
+  which might not suffice anymore.
+
+
+--------------------------------------------------------------------------------------------------------------------------------
+
+
+
+USEFULL mongo shell COMMANDS :
+
+* show dbs                              : to show list of databases
+* use <my_database_name>                : if not present then creates a new database and also switch to it
+* db                                    : shows current database
+* db.createUser({                       : to create a user of the db, so you can put authorization,
+    user : "username",
+    pwd  : "password",
+    roles : ["readWrite", "dbAdmin"]
+})
+* db.createCollection(<cln_name>)       : create collection, which are  very similar to tables in the relational databases,
+.                                         collections hold documents/records
+* show collections                      : to show all the collections/tables in the current database
+
+* db.< cls_name >.insert( <our_json_document> ) : TO insert the document into the collection with name <cls_name> in current db
+
+* db.< cls_name >.insert( [<doc_1>, <doc_2> ])  : TO insert multiple documents into the collection with name <cls_name>
+
+
+
+
+
+------ ------ FIND DOCUMENT ------ ------
+
+* db.< cls_name >.find()                   : To see/find ALL the document in our collection
+
+* db.< cls_name >.find().pretty()          : To see/find ALL the document in our collection  --> with a CLEAN LOOK
+
+* YOU CAN FIND DOCUMENT : using some arguments, like $or , $and operator and you can use > ,<, =, >=, <= symbols too
+  NOTE : we have different operators for thes symbols : > ,<, =, >=, <=
+         lt    <        less_then
+         gt    >        greater_then
+         lte    <        less_then & equal_to
+         gte    >        greater_then & equal_to
+
+
+eg.
+
+ * db.< cls_name >.find( $or:[ {first_name:"prashant"},{first_name : "rahul"} ] ).pretty()
+ * db.< cls_name >.find( {age: {$lt:40} } ).pretty()
+
+ --> QUERYING the document having objets inside it
+ * db.< cls_name >.find({"address.city" : "delhi"}).pretty()      -> city is the field of field. ie nested field (as nested object)
+.                                                                    NOTE : notice the queotes we use to find here.
+
+--> QUERYING the document having array
+ * db.< cls_name >.find({membership:"mem_1"}).pretty()            -> mem_1 is present in the membership arry
+.                                                                    NOTE : notice the queotes we use to find here.
+
+
+
+
+------ ------ SORTING DOCUMENT ------ ------
+ * db.< cls_name >.find(_what_ever_condition_).sort({last_name:1}).pretty()          -> SORT according to "last_name" ASCENDING
+ * db.< cls_name >.find(_what_ever_condition_).sort({last_name:-1}).pretty()         -> SORT according to "last_name" DESCENGING
+
+
+
+
+
+------ ------ COUNT DOCUMENT ------ ------
+* db.< cls_name >.find(_what_ever_condition_).count()           -> FIND all teh document and keeps count of them
+
+
+
+
+
+
+------ ------ LIMIT DOCUMENT ------ ------
+ * db.< cls_name >.find(_what_ever_condition_).limit(_limit_no_)
+.                                                -> NOTE : it first find all the documents (if there are 1000 then first it finds
+.                                                   all the 1000 documents) AND after that applies the limit
+COMGINGING limit & sort
+eg.
+* db.< cls_name >.find(_what_ever_condition_).limit(40).sort()
+
+
+
+
+
+
+------ ------ ITERATING over DOCUMENT ------ ------
+
+ * db.< cls_name >.find(_what_ever_condition_).limit(_limit_no_).forEach( function(curDoc){             // really like javascript
+        print("customer name  : " + curDoc.first_name );                                        // it will run in mongo console ;)
+   });
+
+
+
+
+ ------ ------ UPDATING DOCUMENT ------ ------
+
+
+* db.<cls_name>.update({first_name : "prashant"}, {first_name:"john", last_name :"singh", gender:"male"} )
+.                        \_to first find                 \_ replace it with                        // gender didn't existd earlier
+.                                           : To update the object :NOTE -> with this method we would need to again pass all the
+.                                               fields because if not it will then just replace thw whole with just gender
+
+
+
+
+. WAY AROUND IT -> using  $set  operator
+* db.<cls_name>.update({first_name : "prashant"}, {$set:{gender:"male"}} )
+.                        \_to first find                 \_only set the particular field           // gender didn't existd earlier
+
+.                                           : To update the object  NOTE -> with this method all the other fields will be present
+.                                             and only the new filed or the field whose value we changed is updated
+
+
+
+$inc operator : to increment integer values
+* db.<cls_name>.update({first_name : "prashant"}, {$inc:{age: <Increment_by_HOW_MUCH_number> }} )
+.                        \_to first find                 \_increment the numeric field                  ---> age existd already
+
+.                                           : To update the object BY incrementing numberic filds value
+.                                             NOTE -> with this method all the other fields will be present
+.                                             and only specified field value would be incementd BY --> Increment_by_HOW_MUCH_number
+
+
+$unset operator : to REMOVE a field from the document
+* db.<cls_name>.update({first_name : "prashant"}, {$unset:{age:1}} )
+.                          \_to first find                 \_unset this field                           ---> age existd already
+
+.                                           : To update the object BY REMOVING the specified filds
+.                                             NOTE -> with this method all the other fields will be present/ not-effected
+.                                             and only specified field value would be removed
+
+
+
+>> UPDATING a document which doesn't exist
+
+CASE-1  -->  if DOESN'T EXIST then NO new document/object will be created
+
+* db.<cls_name>.update({first_name : "JULIYA"}, {first_name:"MAYA", age : 21}} )                      --> No "JULIYA" exists in db
+.                          \_to first find                 \_new updated object
+
+.                                           : in this case as the object does not exists so, no changes will be made to the db.
+
+
+CASE-2  -->  if DOESN'T EXIST then a NEW document/object will be created and inserted WITH the corrosponding changes
+    OPTION : {
+        upsert : true       ---> with this option if document not found : it will be created and then added to the db
+    }
+
+* db.<cls_name>.update({first_name : "JULIYA"}, {first_name:"MAYA", age : 21}}, {upsert : true} )     --> No "JULIYA" exists in db
+.                          \_to first find                 \_new updated object
+
+.                                           : in this case although the "JULIYA" document/object does not exists BUT , as we have
+.                                             passed the  options parameters in which one of the option is "upsert" which we have
+.                                             set to true, --> so if the data didn't existd before it will create new document and
+.                                             add it to the db. with corrposonding fields.
+
+
+
+
+$rename Operator --> to rename fields of a document
+
+* db.<cls_name>.update({first_name : "prashant"}, {$rename:{"gender" : "sex"}} )            --> "prasant" has field gendr not sex
+.                          \_to first find                 \_rename field "gender" to "sex"
+
+.                                           : first find the document, if found the rename its corrosponding field name
+
+
+
+
+
+
+------ ------ REMOVING OF DOCUMENT ------ ------
+
+
+* db.<cls_name>.remove({first_name : "prashant"})
+.                          \_to find document
+.                                           : if found then remove the corrosponding document from the db
+.                                           NOTE -> Its going to delete all the document having first_name == "prashant"
+.                                           CAUSIOUS : You may just want to remove only one or set another condition to satisfy
+.                                           eg. OPTIONS : {
+.                                                       justOne : true,
+.                                           }
+SO,
+* db.<cls_name>.remove({first_name : "prashant"}, {justOne : true})
+.                          \_to find document
+
+
+
+
+
+NOTE :
+if we were using a relational database, then before insertion of any field, that field must have to be present in our table schema
+BUT this is not necessary with mongo, we can add any no extra fileds in our document or we can either  remove the previosu fields too.
+
+
+
+--------------------------------
+so for example we can insert documents like:    ---> not writing the comamnd just the document  <----
+
+inser({                     ---->  1
+    name : "kali denali"
+})
+
+inser({                     ---->  2   added extra fields
+    name : "kali denali",
+    age  :  23,
+    sex  : "male"
+})
+
+inser({                     ---->  3   removed some other fields
+    age  :  23,
+    sex  : "male"
+})
+
+
+
+
+
+
+Document Example -> basically a json object (javascript object notation)
+
+{
+    first_name : "prashant",
+    last_name  : "meena",
+    membership : ["mem_1", "mem_2"],            --> array
+    address    : {
+        street : "stree name",                  --> object
+        city   : "New Delhi",
+        pin    : 110014,
+        specialities : {                        --> object of object
+            food : "daal bati choorma",
+            sport : "kabbaddi"
+        }
+    },
+    contacts :[
+        { name : "rahul" , relation : "friends"},   --> array of objects
+        { name : "pandey" , relation : "friends"},
+        { name : "lalit" , relation : "coworker"},
+        { name : "puneet" , relation : "friends"},
+    ]
+}
+
+
+----------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+------------------------------------ Installation on MAC ------------------------------------
+
+On Mac I'd recommend you install mongo with homebrew which installs all programs into /usr/local.
+You will have the default paths:
+
+    config:     ->  /usr/local/etc/mongod.conf
+    data dir:   ->  /usr/local/var/mongodb    --> for lates one its /data/db   [MINE IS in here too]
+    log:        ->  /usr/local/var/log/mongodb/mongo.log
+    plist file: ->  /usr/local/opt/mongodb/homebrew.mxcl.mongodb.plist
+
+* To install: brew install mongodb
+
+* To restart mongo you do:
+    launchctl stop homebrew.mxcl.mongodb
+    launchctl start homebrew.mxcl.mongodb
+------------------------------------------------------------------------------------------------
+
+
+
+------------ My Mongo configuration ------------
+systemLog:
+  destination: file
+  path: /usr/local/var/log/mongodb/mongo.log
+  logAppend: true
+storage:
+  dbPath: /usr/local/var/mongodb
+net:
+  bindIp: 127.0.0.1
+------------------------------------------------
+
+
+
+
+------------------------------------ Start mongo on MAC ------------------------------------
+* start the mongo server    : mongod
+* mongo shell               : mongo     (this should be done after we start the mongo server)
+------------------------------------------------------------------------------------------------
